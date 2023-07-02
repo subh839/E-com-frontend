@@ -16,7 +16,7 @@ export const CreateOrder = (order) => async(dispatch, getState) => {
             }
         }
 
-        const {data} = await axios.post(`/api/orders`, order, config)
+        const {data} = await axios.post(`https://ecommerce-vc6u.onrender.com/api/orders`, order, config)
         dispatch({
             type: ORDER_CREATE_SUCCESS,
             payload: data
@@ -49,7 +49,7 @@ export const getOrderDetails = (id) => async(dispatch, getState) => {
             }
         }
 
-        const {data} = await axios.get(`/api/orders/${id}`,config)
+        const {data} = await axios.get(`https://ecommerce-vc6u.onrender.com/api/orders/${id}`,config)
         dispatch({
             type: ORDER_DETAILS_SUCCESS,
             payload: data
@@ -83,7 +83,7 @@ export const payOrder = (orderId,paymentResult) => async(dispatch, getState) => 
             }
         }
 
-        const {data} = await axios.put(`/api/orders/${orderId}/pay`,paymentResult,config)
+        const {data} = await axios.put(`https://ecommerce-vc6u.onrender.com/api/orders/${orderId}/pay`,paymentResult,config)
         dispatch({
             type: ORDER_PAY_SUCCESS,
             payload: data
@@ -117,7 +117,7 @@ export const deliverOrder = (order) => async(dispatch, getState) => {
             }
         }
 
-        const {data} = await axios.put(`/api/orders/${order._id}/deliver`,{},config)
+        const {data} = await axios.put(`https://ecommerce-vc6u.onrender.com/api/orders/${order._id}/deliver`,{},config)
         dispatch({
             type: ORDER_DELIVER_SUCCESS,
             payload: data
@@ -151,7 +151,7 @@ export const listMyOrders = () => async(dispatch, getState) => {
             }
         }
 
-        const {data} = await axios.get(`/api/orders/myorders`,config)
+        const {data} = await axios.get(`https://ecommerce-vc6u.onrender.com/api/orders/myorders`,config)
         dispatch({
             type: ORDER_LIST_MY_SUCCESS,
             payload: data
@@ -185,7 +185,7 @@ export const listOrders = () => async(dispatch, getState) => {
             }
         }
 
-        const {data} = await axios.get(`/api/orders/`,config)
+        const {data} = await axios.get(`https://ecommerce-vc6u.onrender.com/api/orders/`,config)
         dispatch({
             type: ORDER_LIST_SUCCESS,
             payload: data

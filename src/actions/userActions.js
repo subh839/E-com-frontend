@@ -14,7 +14,7 @@ const login = (email, password) => async(dispatch) => {
             }
         }
 
-        const {data} = await axios.post('/api/users/login', {email, password}, config)
+        const {data} = await axios.post('https://ecommerce-vc6u.onrender.com/api/users/login', {email, password}, config)
         dispatch({
             type: USER_LOGIN_SUCCESS,
             payload: data
@@ -56,7 +56,7 @@ export const register = (name, email, password) => async(dispatch) => {
             }
         }
 
-        const {data} = await axios.post('/api/users', {name, email, password}, config)
+        const {data} = await axios.post('https://ecommerce-vc6u.onrender.com/api/users', {name, email, password}, config)
         dispatch({
             type: USER_REGISTER_SUCCESS,
             payload: data
@@ -99,7 +99,7 @@ export const getUserDetails = (id) => async(dispatch, getState) => {
             }
         }
 
-        const {data} = await axios.get(`/api/users/${id}`, config)
+        const {data} = await axios.get(`https://ecommerce-vc6u.onrender.com/api/users/${id}`, config)
         dispatch({
             type: USER_DETAILS_SUCCESS,
             payload: data
@@ -137,7 +137,7 @@ export const updateUserProfile = (user) => async(dispatch, getState) => {
             }
         }
 
-        const {data} = await axios.put(`/api/users/profile`, user, config)
+        const {data} = await axios.put(`https://ecommerce-vc6u.onrender.com/api/users/profile`, user, config)
         dispatch({
             type: USER_UPDATE_PROFILE_SUCCESS,
             payload: data
@@ -171,7 +171,7 @@ export const ListUsers = () => async(dispatch, getState) => {
             }
         }
 
-        const {data} = await axios.get(`/api/users`, config)
+        const {data} = await axios.get(`https://ecommerce-vc6u.onrender.com/api/users`, config)
         dispatch({
             type: USER_LIST_SUCCESS,
             payload: data
@@ -205,7 +205,7 @@ export const DeleteUser = (id) => async(dispatch, getState) => {
             }
         }
 
-        await axios.delete(`/api/users/${id}`, config)
+        await axios.delete(`https://ecommerce-vc6u.onrender.com/api/users/${id}`, config)
         dispatch({
             type: USER_DELETE_SUCCESS,
                 })
@@ -239,7 +239,7 @@ export const updateUser = (user) => async(dispatch, getState) => {
             }
         }
 
-        const {data} =  await axios.put(`/api/users/${user._id}`,user, config)
+        const {data} =  await axios.put(`https://ecommerce-vc6u.onrender.com/api/users/${user._id}`,user, config)
         dispatch({
             type: USER_UPDATE_SUCCESS,
                 })
